@@ -1,0 +1,43 @@
+{
+    "name": "John Doe",
+    "age": 30,
+    "email": "johndoe@example.com",
+    "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+    },
+    "phoneNumbers": [
+        {
+            "type": "home",
+            "number": "212-555-1234"
+        },
+        {
+            "type": "office",
+            "number": "646-555-5678"
+        }
+    ],
+    "children": [
+        {
+            "name": "Jane Doe",
+            "age": 10
+        },
+        {
+            "name": "Jack Doe",
+            "age": 8
+        }
+    ],
+    "spouse": {
+        "name": "Jane Smith",
+        "age": 28,
+        "email": "janesmith@example.com"
+    },
+    "preferences": {
+        "newsletter": true,
+        "notifications": {
+            "email": true,
+            "sms": false
+        }
+    }
+}
