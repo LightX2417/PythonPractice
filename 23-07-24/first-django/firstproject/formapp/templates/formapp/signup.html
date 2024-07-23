@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+        .container {
+            background-color: #2c2c54;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            width: 400px;
+            margin: auto;
+        }
+        .container label, .container input, .container select, .container textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .container input[type="radio"] {
+            display: inline;
+            width: auto;
+        }
+        .container .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
