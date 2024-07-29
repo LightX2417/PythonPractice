@@ -107,7 +107,6 @@ def demonstrate_operations():
         date_of_joining=date(2022, 3, 10),
     )
 
-
     # Read
     employees = Employee.objects.all()
     specific_employee = Employee.objects.get(emp_id=1)
@@ -138,3 +137,40 @@ def demonstrate_operations():
     print(f"First Five Employees:\n{first_five_employees}")
 
     print("Data operations completed")
+
+
+# Models for Model Form
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    birthdate = models.DateField()
+
+    def __str__(self):
+        return self.name
+
+
+class Publisher(models.Model):
+    name = models.CharField(max_length=100)
+    address = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    publication_date = models.DateField()
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    publishers = models.ManyToManyField(Publisher, through="BookPublisher")
+
+    def __str__(self):
+        return self.title
+
+
+class BookPublisher(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
+    published_date = models.DateField()
+
+    def __str__(self):
+        return f"{self.book.title} - {self.publisher.name}"
