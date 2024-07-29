@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tags</title>
+  </head>
+  <body>
+    <h2>Cycle Tag</h2>
+    {%for i in l%}
+    <h3>{{i}}:{%cycle "ON" "OFF" as Ayush%}</h3>
+    <p>{{Ayush}}</p>
+    {%empty%}
+    <p>Sorry!</p>
+    {%endfor%}
+    <br />
+    <h2>With Tag</h2>
+    {% with myvar=l|length %} {% for x in l %}
+    <p>Quantity of {{ x }} is {{ myvar }}.</p>
+    {% endfor %} {% endwith %}
+    <br />
+    <h2>Lorem Tag</h2>
+    {% lorem 50 w %}
+    <br />
+    <h2>Now Tag</h2>
+    {% now "Y-m-d" %}
+    <br />
+    <h2>For tag</h2>
+    {% for i in l %}
+    <li>{{ i }}</li>
+    {% endfor %}
+  </body>
+</html>
