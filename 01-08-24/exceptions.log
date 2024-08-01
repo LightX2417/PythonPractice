@@ -1,0 +1,5 @@
+2024-08-01 14:04:14,798 - ERROR - Attempted to divide by zero
+Traceback (most recent call last):
+  File "e:\AlgoSoft\PythonPractice\01-08-24\exceptionsLog.py", line 14, in divide
+    return a / b
+ZeroDivisionError: division by zero
