@@ -1,0 +1,4 @@
+# Exclude large files
+*.zip
+*.tar.gz
+*.iso
